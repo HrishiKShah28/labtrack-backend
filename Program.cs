@@ -144,7 +144,7 @@ app.MapGet("/api/health", () => Results.Ok(new { Status = "Healthy", Timestamp =
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    context.Database.EnsureDeleted();
+    ;
     context.Database.EnsureCreated();
     // UPDATED: Use migrations instead of EnsureCreated for PostgreSQL
     try
